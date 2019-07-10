@@ -1,0 +1,36 @@
+*{ padding: 5px; margin: 10px;}
+.header{
+    padding: 40px;
+    font-size: 25px;
+    background-color:transparent;
+    color: wheat;
+    border: 1px red solid;
+
+}
+.main{
+    padding: 230px;
+    background-color:transparent;
+    text-align: center;
+    color: wheat;
+    border: 1px red solid;
+}
+.footer{
+    padding: 15px;
+    background-color:transparent;
+    text-align: center;
+    color: wheat;
+    border: 1px red solid;
+    text-align: end;
+}
+.navbar{
+    text-align: end;
+    font-size: 25px;
+    /*border: 1px red solid;*/
+    color: whitesmoke;
+}
+.navbar a{
+    color: brown;
+    padding: 2px;
+    float: right;
+    
+}

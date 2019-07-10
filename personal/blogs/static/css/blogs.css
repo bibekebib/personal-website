@@ -1,0 +1,47 @@
+*{ padding: 5px; margin: 10px;}
+.header{
+    padding: 40px;
+    background-color:transparent;
+    color: wheat;
+    border: 1px red solid;
+}
+.main{
+    padding: 70px;
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    border: 1px red solid;
+}
+.upper_blog{
+    border: 1px red solid;
+    width:97%;
+
+}
+.content{
+    width: 97%;
+    border: 1px red solid;
+}
+.footer{
+    padding: 15px;
+    background-color:transparent;
+    text-align: center;
+    color: rgb(19, 18, 18);
+    border: 1px red solid;
+    text-align: end;
+}
+.navbar{
+    text-align: end;
+    font-size: 20px;
+    /*border: 1px red solid;*/
+    color: whitesmoke;
+}
+.navbar a{
+    color: brown;
+    padding: 2px;
+    float: right;
+    
+}
+.inner{
+    width: 65%;
+    border: 1px red solid;
+    
+}

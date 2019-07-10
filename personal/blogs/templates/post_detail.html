@@ -1,0 +1,47 @@
+{% load static %}
+{% block content%}
+
+<html>
+    <head>
+            
+            <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <title>My Resume!</title>
+    </head>
+    <body style="background-image: url('{% static 'images/.jpg'%}');background-size:cover;">
+        <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+        <div class="header">
+                <span class="navbar">
+                    <a href="{% url 'contact'%}">Contact</a>
+                    <a href="{% url 'writings'%}">Personal Blogs</a>
+                    <a href="{% url 'blog-home'%}">Home</a>
+                </span>
+            </div>
+            <div class="main">
+                <div class="inner">
+                <h1>
+                    {% block title%}{{ object.title}}{% endblock %}
+                </h1>
+                  <h5>Category: {{post.categories}}</h5> 
+                  <img src="" alt="{{ post.title }}">
+                <p>{{object.content | safe}}</p>
+                {% load social_share %}
+                <span class="glyphicon glyphicon-user">{{post.author}}</span>  <i class='far fa-clock'>{{post.Published_on}}</i><i><span class="glyphicon glyphicon-map-marker"></span>                    {{post.Address }}</i> 
+                <span class="social">
+                    <button>{% post_to_facebook object_or_url "Share on Facebook!" %}</button>
+                    <button>{% post_to_linkedin object.title object_or_url "Share on LinkedIn" %}</button>
+                    <button>{% post_to_twitter "New Article: {{object.title}}. Check it out!" object_or_url "Share on Twitter" %}</button>
+
+</span>
+<div class="fb-comments" data-href="{{ post.slug }}" data-width="450" data-numposts="5"></div> 
+
+
+            </div> 
+                {%endblock content%}
+
+            </div>
+            <div class="footer">Made with love! By Bibek Chalise.
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<title>I, Me, Bibek</title>
+<body style="background-image: url('{% static 'images/back.jpg' %}');background-size:conver;">
+<div class="header">Bibek Chalise
+    <span class="navbar">
+        <a href="{% url 'contact'%}">Contact</a>
+        <a href="{% url 'resume'%}">Resume</a>
+        <a href="{% url 'writings'%}">Personal Blogs</a> 
+        <a href="{% url 'blog-home'%}">Home</a> 
+        
+    </span>
+</div>
+
+<div class="main">
+      
+</div>
+    
+<div class="footer">Made with love! By Bibek Chalise.
+</div>
+</body>
+
+
+</html>

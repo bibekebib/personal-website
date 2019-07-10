@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+    <head>
+            <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+        <title>Contact Me</title>
+    </head>
+    <body style="background-image: url('{% static 'images/contact.jpg'%}');background-size:cover;">
+        <div class="header">Bibek Chalise
+                <span class="navbar">
+                    <a href="{% url 'resume'%}">Resume</a>
+                    <a href="{% url 'writings'%}">Personal-Blogs</a>
+                    <a href="{% url 'blog-home'%}">Home</a>
+                </span>
+            </div>
+            <div class="main">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" value="Submit">Submit</button>
+                </form>
+            </div>
+            <div class="footer">Made with love! By Bibek Chalise.
+    </body>
+</html>

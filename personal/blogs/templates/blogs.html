@@ -1,0 +1,43 @@
+{% load static %}
+{% block content %}
+<html>
+    <head>
+            <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <title>Personal Blogs</title>
+    </head>
+    <body style="background-image: url('{% static 'images/blogs.jpg'%}');background-size:cover;">
+        <div class="header">Bibek Chalise
+                <span class="navbar">
+                        <a href="{% url 'contact'%}">Contact</a>
+                        <a href="{% url 'resume'%}">Resume</a>
+                        <a href="{% url 'writings'%}">Personal Blogs</a> 
+                        <a href="{% url 'blog-home'%}">Home</a> 
+                </span>
+            </div>
+            <div class="main">
+                <div class="inner">
+                    {% for post in post_list %}
+                    <div class="upper_blog">
+                        <a href="{% url 'post_detail' post.slug %}">  <h1>{{ post.title }}</h1></a>
+                        Category: {{post.categories}}
+                        <!--<span class="glyphicon glyphicon-user">{{post.author}}--><i><span class="glyphicon glyphicon-map-marker"></span>                    {{post.Address }}</i> 
+                        <i class='far fa-clock'></i><i>{{post.Published_on}}</i>
+                    </div>
+                    <div class="content">
+                        <p> {{ post.content | slice:':200' }} </p>
+                        <a href="{% url 'post_detail' post.slug %}">Read more &rarr;</a>
+                    </div>
+                
+                    <hr>
+                
+                    {% endfor %} 
+                    {% endblock content %}
+                </div>
+                
+            </div>
+            <div class="footer">Made with love! By Bibek Chalise.
+               
+            </body>
+</html>
