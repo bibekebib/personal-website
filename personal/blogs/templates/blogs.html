@@ -2,42 +2,62 @@
 {% block content %}
 <html>
     <head>
+            
+            <link rel="stylesheet" href="{% static 'css/index.css' %}">
             <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-        <title>Personal Blogs</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+            <title>Blogs</title>
     </head>
-    <body style="background-image: url('{% static 'images/blogs.jpg'%}');background-size:cover;">
-        <div class="header">Bibek Chalise
-                <span class="navbar">
-                        <a href="{% url 'contact'%}">Contact</a>
-                        <a href="{% url 'resume'%}">Resume</a>
-                        <a href="{% url 'writings'%}">Personal Blogs</a> 
-                        <a href="{% url 'blog-home'%}">Home</a> 
+    <body style="background-color: black;">
+            <div class="header">The-Ambivert
+                <span class="navbars">
+                    <a href="{% url 'contact'%}">Contact</a>
+                    <a href="{% url 'resume'%}">Resume</a>
+                    <a href="{% url 'writings'%}">Blogs</a> 
+                    <a href="{% url 'blog-home'%}">Home</a>   
                 </span>
             </div>
+            
             <div class="main">
                 <div class="inner">
-                    {% for post in post_list %}
-                    <div class="upper_blog">
-                        <a href="{% url 'post_detail' post.slug %}">  <h1>{{ post.title }}</h1></a>
-                        Category: {{post.categories}}
-                        <!--<span class="glyphicon glyphicon-user">{{post.author}}--><i><span class="glyphicon glyphicon-map-marker"></span>                    {{post.Address }}</i> 
-                        <i class='far fa-clock'></i><i>{{post.Published_on}}</i>
-                    </div>
-                    <div class="content">
-                        <p> {{ post.content | slice:':200' }} </p>
-                        <a href="{% url 'post_detail' post.slug %}">Read more &rarr;</a>
-                    </div>
-                
-                    <hr>
-                
-                    {% endfor %} 
-                    {% endblock content %}
+                    <h1><b>New Blogs</b></h1>
+                 <hr>
+                 <br>
+                    {% for material in material  %}
+                <h3>{{ material.title }}</h3>
+                <img src="{{ material.image.url }}" height="auto" width="40%" alt="{{ material.title }}" justify='center'/>
+                <br>
+                Category: {{ material.categories }}<br>
+                Published on:{{ material.Published_on}}<br>
+               
+            <p>{{material.content|safe|slice:'400' }}</p>
+            
+            <a href="{% url 'post_detail' material.slug %}">Real more -----></a>
+            <br>
+            <br><hr color="red" size="10">
+                {% endfor %}
                 </div>
                 
             </div>
+            <div>
+              
+            </div>
+            <!-- <span class="social_links">
+                Follow me on!
+                    <a href="https://www.facebook.com/IamBbek" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/I_am_Bbek" class="fa fa-twitter"></a>
+                    <a href="https://www.linkedin.com/in/ImBbek/" class="fa fa-linkedin"></a>
+                    <a href="https://github.com/bibekebib" class="fa fa-github"></a>
+                    <a href="https://www.instagram.com/im_bbek/" class="fa fa-instagram"></a>
+            </span> -->
             <div class="footer">Made with love! By Bibek Chalise.
-               
-            </body>
+            </div>   
+            
+            {% endblock %}
+    </body>
 </html>

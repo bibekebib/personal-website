@@ -1,5 +1,8 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
+
 
 # Create your models here.
 
@@ -29,7 +32,7 @@ class post(models.Model):
     title = models.CharField(max_length=255, help_text="Enter title")
     slug = models.SlugField(max_length=255, unique=True,help_text="It will auto-complete automically!")
     image = models.ImageField(upload_to='images/',help_text="enter feature image of post")
-    content =models.TextField(help_text="Enter your post")
+    content =RichTextField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE,help_text='select author')
     categories = models.ForeignKey(Categories,on_delete=models.CASCADE,help_text='select category')
     Address= models.CharField(max_length=255,help_text="enter the present address")
@@ -62,3 +65,7 @@ class Contacted(models.Model):
     Subject = models.CharField(max_length=255)
     Message  = models.TextField(blank=False)
 
+class Comment(models.Model):
+    Name = models.CharField(max_length=255, blank=False)
+    Email = models.EmailField(blank=False)
+    Comment = models.TextField(blank=False)

@@ -7,12 +7,16 @@
     font-size: 30px;
 }
 .main{
-    padding: 30px;
+    padding: 2em;
     background-color:transparent;
     text-align: center;
     color: wheat;
-    /*border: 1px red solid;*/
+    border: 1px red solid;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
 }
+
 .footer{
     padding: 15px;
     background-color:transparent;
@@ -20,12 +24,47 @@
     color: wheat;
     /*border: 1px red solid;*/
     text-align: end;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
 }
 .navbar{
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
+    float: right;
     text-align: end;
     font-size: 25px;
-    /*border: 1px red solid;*/
+    border: 1px red solid;
     color: rgb(243, 0, 0);
+    background-color: rgb(78, 77, 75);
+    box-shadow: aquamarine;    
+}
+.header{
+    
+    background-color:transparent;
+    color: wheat;
+    font-size: 20px;
+    
+}
+
+
+.footer{
+    padding: 15px;
+    background-color:transparent;
+    text-align: center;
+    color: wheat;
+   
+    text-align: end;
+}
+.navbar{
+    float: right;
+    text-align: end;
+    font-size: 18px;
+    border: 1px red solid;
+    color: rgb(243, 0, 0);
+    background-color: rgb(78, 77, 75);
+    box-shadow: aquamarine;    
 }
 .navbar a{
     color: rgb(0, 255, 242);
@@ -33,16 +72,21 @@
     float: right;
     text-decoration: none;
     cursor: pointer;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
 }
 form{
-    margin: 10px;
+    margin:100px;
     position: relative;
-    left: 45%;
     top:0px;
-    width: 55%;
+    width: 100%;
     float: inherit;
     box-align: right;
-    text-align: end;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
+    
 }
 input{
     background: transparent;
@@ -50,14 +94,20 @@ input{
     width: 100%;
     border-color: transparent;
     border-bottom-color: aqua;
-    font-size: 20px;
+    font-size: 1.2em;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
     
 }
 textarea{
     background: transparent;
     color: wheat;
     width: 100%;
-    font-size: 20px;
+    font-size: 2em;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
 }
 label{
     visibility: hidden;

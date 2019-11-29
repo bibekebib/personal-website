@@ -1,63 +1,119 @@
-*{ padding: 5px; margin: 10px;}
+*{ padding: 5px; margin: 10px; cursor: auto;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
+cursor:auto;}
+
 .header{
-    padding: 10px;
+    
     background-color:transparent;
     color: wheat;
-    border: 1px red solid;
+    /*border: 1px red solid;*/
+    font-size: 20px;
 }
-.main{
-    padding: 70px;
-    background-color:transparent;
-    color: rgb(0, 0, 0);
-    border: 1px red solid;
-    wid
-}
-.upper_blog{
-    border: 1px red solid;
-    width:97%;
 
-}
-.content{
-    width: 97%;
-    border: 1px red solid;
-}
+
 .footer{
     padding: 15px;
     background-color:transparent;
     text-align: center;
-    color: rgb(19, 18, 18);
-    border: 1px red solid;
+    color: wheat;
+    
     text-align: end;
 }
-.navbar{
+.navbars{
+    float: right;
     text-align: end;
-    font-size: 30px;
-    /*border: 1px red solid;*/
-    color: whitesmoke;
+    font-size: 18px;
+    
+    color: rgb(243, 0, 0);
+    background-color:transparent;
+    box-shadow: aquamarine;    
 }
-.navbar a{
-    color: brown;
+.navbars a{
+    color: rgb(0, 255, 242);
     padding: 2px;
     float: right;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main{
+    
+    padding: 0.3em;
+    background-color:transparent;
+    color: rgb(255, 255, 255);
+   
+
+}
+.upper_blog{
+    
+    width:100%;
+
+}
+.content{
+    width: 100%;
     
 }
+
 .inner{
-    width: 65%;
-    border: 1px red solid;
-    text-align: left;
-    color: black;
-    margin: 5px;
-    background-color:whitesmoke;
-    opacity: 0.8;
+    
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    background-color:transparent;
+    border-radius: 15px;
+   
+    
+}
+.more-blogs :hover{
+    cursor: pointer;
 }
 .inner p{
-    font-size: 20px;
+    font-size: 1.2em;
+    text-align:justify;
+
 }
-.social{
-    display: inline-block;
-    margin: 5px;
+.inner blockquote{
+    font-size: 1.15em;
+    text-align:justify;
+
 }
-.social button{
-   background-color: beige;
-   padding-block: 10px;
+
+.fa{
+    padding: 0.3em;
+    font-size: 16px;
+    text-align: center;
+    border: 3px solid gainsboro;
+    border-radius: 45%;
+    color: white;
+    
+    
+
+}
+.social_links{
+  display: block;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+
+ 
+  
+}
+.fa-facebook{
+    background: #3B5998;
+}
+.fa-twitter{
+    background:  #55ACEE;
+}
+.fa-instagram{
+    background: #b25c4a;
+}
+.fa-github{
+    background: black;
+}
+.fa-linkedin{
+    background: #007bb5;
 }

@@ -1,47 +1,71 @@
-*{ padding: 5px; margin: 10px;}
+*{ padding: 5px; margin: 10px; cursor: auto;
+    list-style-type:square;
+    font-family:fantasy;
+    font-weight: bold;
+    }
+
 .header{
-    padding: 40px;
+    
     background-color:transparent;
     color: wheat;
-    border: 1px red solid;
+    /*border: 1px red solid;*/
+    font-size: 40px;
 }
-.main{
-    padding: 70px;
-    background-color:transparent;
-    color: rgb(0, 0, 0);
-    border: 1px red solid;
-}
-.upper_blog{
-    border: 1px red solid;
-    width:97%;
 
-}
-.content{
-    width: 97%;
-    border: 1px red solid;
-}
 .footer{
     padding: 15px;
     background-color:transparent;
     text-align: center;
-    color: rgb(19, 18, 18);
-    border: 1px red solid;
+    color: wheat;
+   
     text-align: end;
 }
-.navbar{
-    text-align: end;
-    font-size: 20px;
-    /*border: 1px red solid;*/
-    color: whitesmoke;
-}
-.navbar a{
-    color: brown;
-    padding: 2px;
+.navbars{
+    z-index: 1;
+    top: auto;
     float: right;
+    text-align: end;
+    font-size: 0.6em;
+   
+    color: rgb(243, 0, 0);
+    background-color:transparent;
     
+
+}
+.navbars a{
+    
+
+    padding: 0.2em;
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+    
+    color:rgb(240, 235, 235);
+}
+
+
+.main{
+    padding: 0.5em;
+    background-color:rgb(5, 4, 4);
+    color: rgb(238, 221, 221);
+    
+    border-radius: 15px;
+   
+}
+.upper_blog{  
+    width:90%;
+
+}
+.content{
+    width: 80%;
+    font-size: 1.5em;
+    text-align: justify; 
+   
 }
 .inner{
-    width: 65%;
-    border: 1px red solid;
-    
+    width:95%; 
+    font-size: 1.3em;  
+}
+.inner a:hover{
+    cursor: pointer;
 }

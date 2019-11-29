@@ -3,45 +3,94 @@
 
 <html>
     <head>
-            
+       
             <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+            <link rel="stylesheet" href="{% static 'css/index.css' %}">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-        <title>My Resume!</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+            <title>{{material.title}}</title>
     </head>
-    <body style="background-image: url('{% static 'images/.jpg'%}');background-size:cover;">
-        <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
-        <div class="header">
-                <span class="navbar">
-                    <a href="{% url 'contact'%}">Contact</a>
-                    <a href="{% url 'writings'%}">Personal Blogs</a>
-                    <a href="{% url 'blog-home'%}">Home</a>
-                </span>
-            </div>
+    <body style="background-color: black;">
+            <div class="header">The-Ambivert
+                    <span class="navbars">
+                        <a href="{% url 'contact'%}">Contact</a>
+                        <a href="{% url 'resume'%}">Resume</a>
+                        <a href="{% url 'writings'%}">Blogs</a> 
+                        <a href="{% url 'blog-home'%}">Home</a>  
+                    </span>
+                </div>
             <div class="main">
                 <div class="inner">
                 <h1>
-                    {% block title%}{{ object.title}}{% endblock %}
+                    {% block title%}{{ material.title}}{% endblock %}
                 </h1>
-                  <h5>Category: {{post.categories}}</h5> 
-                  <img src="" alt="{{ post.title }}">
-                <p>{{object.content | safe}}</p>
-                {% load social_share %}
-                <span class="glyphicon glyphicon-user">{{post.author}}</span>  <i class='far fa-clock'>{{post.Published_on}}</i><i><span class="glyphicon glyphicon-map-marker"></span>                    {{post.Address }}</i> 
-                <span class="social">
-                    <button>{% post_to_facebook object_or_url "Share on Facebook!" %}</button>
-                    <button>{% post_to_linkedin object.title object_or_url "Share on LinkedIn" %}</button>
-                    <button>{% post_to_twitter "New Article: {{object.title}}. Check it out!" object_or_url "Share on Twitter" %}</button>
+                  <h5>Category: {{material.categories}}</h5> 
+                  <img src="{{ material.image.url }}" height="auto" width="70%" alt="{{ material.title }}" justify="center"/>
+                <p><blockquote>{{material.content |safe }}</blockquote></p>
+               <br>
+                <span class="glyphicon glyphicon-user">{{material.author}}</span>  <i class='far fa-clock'>{{material.Published_on}}</i><i><span class="glyphicon glyphicon-map-marker"></span>                    {{material.Address }}</i> 
+               
 
 </span>
-<div class="fb-comments" data-href="{{ post.slug }}" data-width="450" data-numposts="5"></div> 
+<div class="side">
 
+</div>
+
+
+<hr size="15 px">
+<div class='more-blogs'>
+    <h4>More Blogs</h4>
+    {%for this in this%}
+ <h4><a href="{% url 'post_detail' this.slug %}">{{this.title}}</a></h4> 
+
+    {% endfor  %}
+
+</div>
+<hr>
+            <div>
+                    <div id="disqus_thread"></div>
+                    <script>
+                    
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://chalisebibek-com-np.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                                
+            </div>  
 
             </div> 
                 {%endblock content%}
 
             </div>
-            <div class="footer">Made with love! By Bibek Chalise.
+            
+                    
+                    <div class="footer">   
+                            <!-- <span class="social_links">
+                                    Follow me on!
+                                    <a href="https://www.facebook.com/IamBbek" class="fa fa-facebook"></a>
+                                    <a href="https://twitter.com/I_am_Bbek" class="fa fa-twitter"></a>
+                                    <a href="https://www.linkedin.com/in/ImBbek/" class="fa fa-linkedin"></a>
+                                    <a href="https://github.com/bibekebib" class="fa fa-github"></a>
+                                    <a href="https://www.instagram.com/im_bbek/" class="fa fa-instagram"></a>
+                            </span> -->
+                Made with love! By Bibek Chalise.
+                </div>
     </body>
 </html>

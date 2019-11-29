@@ -1,6 +1,7 @@
 from django import forms
 from django.shortcuts import render, redirect
-from .models import Contacted
+from .models import Contacted, Comment
+
 class ContactForm(forms.ModelForm):
 
     class Meta:
@@ -17,4 +18,13 @@ class ContactForm(forms.ModelForm):
     #Subject = forms.CharField(max_length=255,widget=forms.TextInput(attrs={'placeholder':'Subject'}))
     #Messsage = forms.CharField(required=True, widget=forms.Textarea(attrs={'placeholder':'Your Message'}))
 
+class ReplyForm(forms.ModelForm):
 
+    class Meta:
+        model = Comment
+        widget={
+            'Name':forms.TextInput(attrs={'placeholder':'Name'}),
+            'Email':forms.TextInput(attrs={'placeholder':'Email'}),
+            'Comment':forms.Textarea(attrs={'placeholder':'Your Comment'})
+        }
+        fields=('Name','Email','Comment')

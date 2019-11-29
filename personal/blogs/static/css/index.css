@@ -1,0 +1,35 @@
+.fa{
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    border: 3px solid gainsboro;
+    border-radius: 45%;
+    color: white;
+    
+    
+
+}
+.social_links{
+  display: block;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+
+ 
+  
+}
+.fa-facebook{
+    background: #3B5998;
+}
+.fa-twitter{
+    background:  #55ACEE;
+}
+.fa-instagram{
+    background: #b25c4a;
+}
+.fa-github{
+    background: black;
+}
+.fa-linkedin{
+    background: #007bb5;
+}
