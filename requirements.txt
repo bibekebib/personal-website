@@ -22,7 +22,6 @@ cffi==1.12.2
 chardet==3.0.4
 Click==7.0
 cloudpickle==0.8.0
-clyent==1.2.2
 colorama==0.4.1
 colors.py==0.2.2
 colour==0.1.5
