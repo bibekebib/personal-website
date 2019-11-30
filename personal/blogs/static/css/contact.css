@@ -80,7 +80,7 @@ form{
     margin:100px;
     position: relative;
     top:0px;
-    width: 100%;
+    width: 70%;
     float: inherit;
     box-align: right;
     list-style-type:square;
@@ -91,7 +91,7 @@ form{
 input{
     background: transparent;
     color: wheat;
-    width: 100%;
+    width: 70%;
     border-color: transparent;
     border-bottom-color: aqua;
     font-size: 1.2em;
@@ -103,7 +103,7 @@ input{
 textarea{
     background: transparent;
     color: wheat;
-    width: 100%;
+    width: 60%;
     font-size: 2em;
     list-style-type:square;
     font-family:fantasy;

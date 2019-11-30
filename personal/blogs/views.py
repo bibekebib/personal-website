@@ -61,23 +61,32 @@ def contact(request):
 def PostList(request):
     material = post.objects.all()
     
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/blog') # does nothing, just trigger the validation
-    else:
-        form = ContactForm()
+    # if request.method == 'POST':
+    #     form = ContactForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('/blog') # does nothing, just trigger the validation
+    # else:
+    #     form = ContactForm()
     
     
-    return render(request, 'blogs.html', {'material':material,'form': form})
+    return render(request, 'blogs.html', {'material':material})
 
 def PostDetail(request, slug):
     this = post.objects.all()
     material = post.objects.get(slug= slug)
     return render(request, 'post_detail.html',{'material':material,'this':this})
 
+# def search(request):
+#     search_term = request.GET.get('title_contains')
 
+#     # if 'search' in request.GET:
+#     #     search_term = request.GET['search']
+#     #     articles = post.objects.all().filter(title_contains=search_term) 
+
+#     articles = post.objects.all()
+
+#     return render(request, 'search.html', {'articles' : articles, 'search_term': search_term })
 #class PostDetail(generic.DetailView):
  #   model = post
   #  template_name = 'post_detail.html'

@@ -11,7 +11,7 @@ urlpatterns = [
     path('contact/',views.contact, name="contact"),
     path('resume/',views.cv, name="resume"),
     path('', views.home, name="blog-home"),
-    #path('',views.contact2,name="contact2"),
+    # path('search/',views.search,name='search'),
     path('ckeditor/',include('ckeditor_uploader.urls'))
    
 ] 

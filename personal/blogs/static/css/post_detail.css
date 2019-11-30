@@ -81,6 +81,9 @@ cursor:auto;}
     text-align:justify;
 
 }
+.inner img{
+    justify-content: center;
+}
 
 .fa{
     padding: 0.3em;
