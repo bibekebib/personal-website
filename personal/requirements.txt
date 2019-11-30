@@ -118,7 +118,7 @@ pytz==2018.9
 PyWavelets==1.0.3
 pyxattr==0.6.1
 pyxdg==0.25
-PyYAML==3.13
+PyYAML==5.1
 rawkit==0.6.0
 regex==2019.4.14
 reportlab==3.5.18
